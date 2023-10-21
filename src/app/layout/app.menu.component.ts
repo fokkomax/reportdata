@@ -24,7 +24,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'การจัดการ',
                 items: [
                     { label: 'ข้อมูลพื้นฐานสถานบริการสุขภาพ', icon: 'pi pi-fw pi-id-card', routerLink: ['/reportdata'] },
-                    { label: 'ดูสถานะคำขอ', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
+                    { label: 'ดูสถานะคำขอ', icon: 'pi pi-fw pi-check-square', routerLink: ['/request'] },
                     { label: 'ประวัติคำขอเปลี่ยนแปลงข้อมูล', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel'] }
                 ]
             },

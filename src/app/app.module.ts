@@ -14,11 +14,12 @@ import { PhotoService } from './demo/service/photo.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BadgeModule } from 'primeng/badge';
 import { ReportdataComponent } from './reportdata/reportdata.component';
+import { RequestComponent } from './request/request.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, DashboardComponent, ReportdataComponent
+        AppComponent, NotfoundComponent, DashboardComponent, ReportdataComponent, RequestComponent
     ],
     imports: [
         AppRoutingModule,
