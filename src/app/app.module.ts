@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BadgeModule } from 'primeng/badge';
 import { ReportdataComponent } from './reportdata/reportdata.component';
 import { RequestComponent } from './request/request.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RequestComponent } from './request/request.component';
     imports: [
         AppRoutingModule,
         AppLayoutModule,
-        BadgeModule
+        BadgeModule,
+        CommonModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
