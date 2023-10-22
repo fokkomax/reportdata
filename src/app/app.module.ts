@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { AppConfig } from '../environments/environment';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,11 +17,12 @@ import { BadgeModule } from 'primeng/badge';
 import { ReportdataComponent } from './reportdata/reportdata.component';
 import { RequestComponent } from './request/request.component';
 import { CommonModule } from '@angular/common';
+import { ReportdataDetailComponent } from './reportdata-detail/reportdata-detail.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, DashboardComponent, ReportdataComponent, RequestComponent
+        AppComponent, NotfoundComponent, DashboardComponent, ReportdataComponent, RequestComponent, ReportdataDetailComponent
     ],
     imports: [
         AppRoutingModule,
@@ -29,6 +31,11 @@ import { CommonModule } from '@angular/common';
         CommonModule
     ],
     providers: [
+        { provide: 'API_URL', useValue: AppConfig.apiUrl },
+        { provide: 'APPNAME', useValue: AppConfig.appName },
+        { provide: 'VERSION', useValue: AppConfig.version },
+        { provide: 'SUBVERSION', useValue: AppConfig.subVersion },
+        { provide: 'WURL', useValue: AppConfig.whiteUrl },
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService
