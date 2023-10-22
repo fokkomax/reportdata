@@ -26,4 +26,11 @@ export class MainService {
       .then(result => result)
       .catch(error => error);
   }
+
+  getTableHeader(year) {
+    return this.http.get(`${this.url}/itreport/main/getTableHeader/${year}`, {})
+      .toPromise()
+      .then(result => result)
+      .catch(error => error);
+  }
 }

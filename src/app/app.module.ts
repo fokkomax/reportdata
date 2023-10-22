@@ -18,6 +18,8 @@ import { ReportdataComponent } from './reportdata/reportdata.component';
 import { RequestComponent } from './request/request.component';
 import { CommonModule } from '@angular/common';
 import { ReportdataDetailComponent } from './reportdata-detail/reportdata-detail.component';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ReportdataDetailComponent } from './reportdata-detail/reportdata-detail
         AppRoutingModule,
         AppLayoutModule,
         BadgeModule,
-        CommonModule
+        CommonModule,
+        TableModule,
+        ButtonModule
     ],
     providers: [
         { provide: 'API_URL', useValue: AppConfig.apiUrl },

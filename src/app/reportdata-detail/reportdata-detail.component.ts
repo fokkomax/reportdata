@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { fadeAnimation2 } from '../route-animations';
 import { MainService } from '../service/main.service';
+import { Table } from 'primeng/table';
 
 @Component({
   selector: 'app-reportdata-detail',
@@ -12,19 +13,32 @@ import { MainService } from '../service/main.service';
 export class ReportdataDetailComponent {
 
   active_year: any
-  report_list: any
+  report_list: any = [];
+  tableHeader: any = [];
 
   constructor(
     private _Activatedroute: ActivatedRoute,
     private mainService: MainService,
   ) {
     this.active_year = this._Activatedroute.snapshot.params['year'];
+    this.tableHeader = [
+      { field: 'hcode', header: 'รหัสสถานบริการ' },
+    ]
   }
 
   async ngOnInit(): Promise<void> {
     this.mainService.getReport(this.active_year).then(async result => {
       this.report_list = result.rows
     })
+    this.mainService.getTableHeader(this.active_year).then(async result => {
+      for (let i = 0; i < result.reccount; i++) {
+        this.tableHeader.push(result.rows[i])
+      }
+    })
+  }
+
+  clear(table: Table) {
+    table.clear();
   }
 
 }

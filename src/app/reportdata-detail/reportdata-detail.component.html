@@ -1,1 +1,48 @@
-<p>reportdata-detail works!</p>
+<div class="grid">
+    <div class="col-12" @fadeAnimation2>
+
+        <div class="col-12 lg:col-6 xl:col-3">
+            <h5>
+                <p-badge value="ข้อมูลพื้นฐานปีงบประมาณ {{active_year}}" size="large" severity="primary"
+                    styleClass="p-font">
+                </p-badge>
+            </h5>
+        </div>
+
+
+        <p-table #dt3 [value]="report_list" dataKey="id" responsiveLayout="scroll" [paginator]="true" [rows]="50"
+            [showCurrentPageReport]="true" [rowsPerPageOptions]="[50,100,200,500,1000]"
+            currentPageReportTemplate="รายการ {first} ถึง {last} จากทั้งหมด {totalRecords} รายการ"
+            styleClass="p-font p-datatable-sm p-datatable-gridlines">
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <button pButton label="ล้าง" class="p-button-sm p-button-outlined" icon="pi pi-filter-slash"
+                        (click)="clear(dt3)"></button>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let col of tableHeader" pSortableColumn="{{col.field}}">
+                        <div class="flex justify-content-between align-items-center">
+                            <div class="flex justify-content-start align-items-start">
+                                {{col.header}} <p-sortIcon field="{{col.field}}"></p-sortIcon>
+                            </div>
+                            <p-columnFilter type="text" field="{{col.field}}" display="{{col.field}}"
+                                matchMode="contains">
+                            </p-columnFilter>
+                        </div>
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data>
+                <tr>
+                    <td>{{data.hcode}}</td>
+                    <td>{{data.bed_obgyn}}</td>
+                    <td>{{data.bed_obgyn_s}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+
+</div>
