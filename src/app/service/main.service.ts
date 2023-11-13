@@ -40,6 +40,13 @@ export class MainService {
       .catch(error => error);
   }
 
+  getFullReport(year: any) {
+    return this.http.get(`${this.url}/itreport/main/getFullReport/${year}`, {})
+      .toPromise()
+      .then(result => result)
+      .catch(error => error);
+  }
+
   getTableHeader(year: any) {
     return this.http.get(`${this.url}/itreport/main/getTableHeader/${year}`, {})
       .toPromise()

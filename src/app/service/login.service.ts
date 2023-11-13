@@ -32,7 +32,7 @@ export class LoginService {
     if (token && !this.jwtHelper.isTokenExpired(token)) {
       return this.jwtHelper.decodeToken(token);
     } else {
-      // this.route.navigate(['/login']);
+      this.route.navigate(['/login']);
     }
   }
 
