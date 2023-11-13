@@ -1,0 +1,13 @@
+@mixin flex ($dir: row, $ai: stretch, $jc: stretch) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: $ai;
+    justify-content: $jc;
+}
+
+@mixin bg-image($uri, $size, $position) {
+    background-image: url($uri);
+    background-size: $size;
+    background-position: $position;
+    opacity: 0.8;
+}

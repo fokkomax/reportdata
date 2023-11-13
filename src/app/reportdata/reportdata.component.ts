@@ -11,6 +11,8 @@ import { MainService } from '../service/main.service';
 export class ReportdataComponent {
 
   year_detail: any;
+  active_year: any;
+  not_active_year: any;
 
   constructor(
     private mainService: MainService,
@@ -19,8 +21,13 @@ export class ReportdataComponent {
   }
 
   async ngOnInit(): Promise<void> {
-    this.mainService.getYear().then(async result => {
-      this.year_detail = result.rows
+    //--- GET NOT ACTIVE YEAR
+    this.mainService.getYearNotActive().then(async result => {
+      this.not_active_year = result.rows
+    })
+    //--- GET ACTIVE YEAR
+    this.mainService.getYearActive().then(async result => {
+      this.active_year = result.rows
     })
   }
 

@@ -20,11 +20,17 @@ import { CommonModule } from '@angular/common';
 import { ReportdataDetailComponent } from './reportdata-detail/reportdata-detail.component';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
+import { AutoFocusModule } from 'primeng/autofocus';
+import { ToastModule } from 'primeng/toast';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, DashboardComponent, ReportdataComponent, RequestComponent, ReportdataDetailComponent
+        AppComponent, NotfoundComponent, DashboardComponent, ReportdataComponent, RequestComponent, ReportdataDetailComponent, LoginComponent
     ],
     imports: [
         AppRoutingModule,
@@ -32,7 +38,13 @@ import { ButtonModule } from 'primeng/button';
         BadgeModule,
         CommonModule,
         TableModule,
-        ButtonModule
+        ButtonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        PasswordModule,
+        AutoFocusModule,
+        ToastModule,
+        InputTextModule
     ],
     providers: [
         { provide: 'API_URL', useValue: AppConfig.apiUrl },

@@ -19,15 +19,28 @@ export class MainService {
       .then(result => result)
       .catch(error => error);
   }
+  getYearActive() {
+    return this.http.get(`${this.url}/itreport/main/getYearActive`, {})
+      .toPromise()
+      .then(result => result)
+      .catch(error => error);
+  }
 
-  getReport(year) {
+  getYearNotActive() {
+    return this.http.get(`${this.url}/itreport/main/getYearNotActive`, {})
+      .toPromise()
+      .then(result => result)
+      .catch(error => error);
+  }
+
+  getReport(year: any) {
     return this.http.get(`${this.url}/itreport/main/getReport/${year}`, {})
       .toPromise()
       .then(result => result)
       .catch(error => error);
   }
 
-  getTableHeader(year) {
+  getTableHeader(year: any) {
     return this.http.get(`${this.url}/itreport/main/getTableHeader/${year}`, {})
       .toPromise()
       .then(result => result)
